@@ -14,8 +14,8 @@
 //     let myNumber = 5
 //     console.log("My number is "+ myNumber);
 // }
-    if(flag)
-        let myNum= 5
+    // if(flag)
+    //     let myNum= 5
 
 console.log(flag);
 // let myNumber = 1;

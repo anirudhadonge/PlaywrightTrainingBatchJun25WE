@@ -1,5 +1,5 @@
 /**
- * Number : any number which is a decimal or an Integer is considered to be Number type.
+ * Number : any numerical value which is a decimal or an Integer is considered to be Number type.
  * String : 
  * Boolean
  * Undefined
