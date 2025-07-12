@@ -55,3 +55,6 @@ function fun1(fun2){
 fun1(function (){
     console.log("this is function2");
 })
+
+
+1234567 ==> 7654321
