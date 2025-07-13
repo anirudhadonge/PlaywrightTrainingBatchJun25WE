@@ -1,0 +1,61 @@
+	• Setting Up The Playwright Project
+		○ Npm init playwright
+			§ Project structure
+				□ Package.json
+				□ Test folder
+				□ Playwright.config file.
+				□ Node module.
+		○ Npx playwright test
+		○ npx playwright show-report
+		○ npm install -D @playwright/test@latest
+		○ Writing Test
+			§ perform actions,
+			§ assert the state against expectations.
+	• Locator
+		○ Xpath
+		○ Css
+		○ By Text
+	• Actions
+		○ Locator
+			○ Locate by role
+			○ Locate by label
+			○ Locate by placeholder
+			○ Locate by text
+			○ Locate by alt text
+			○ Locate by title
+			○ Locate by test id
+			○ Locate by CSS or XPath
+			
+		○ Click
+		○ Fill and press sequencally-- Textbox /input fields
+		○ Select options
+		○ Checkboxes and radio buttons
+		○ Upload files
+		○ Frames
+		○ Download File
+		○ Javascript Popups (Alerts)
+		○ Hover
+		○ New Page
+		○ Basic Authentication
+		○ Drag and Drop
+	• Waits
+	• Expect (Assertions)
+	• Important Playwright Test Annotation and tagging
+	• Async await Understanding 
+	• Browser Context and Page Fixtures 
+	• Configuration File  (Playwright Config file)
+	• Running Playwright Test in multiple browsers 
+	• Fixtures
+	• Test Retries, 
+	• Debug
+	• Code gen
+	• Trace Viewer
+	• Serial and Parallel execution
+	• Html and Allure reporting.
+	• API testing.
+	• Page model creation
+	• Parameterization of test data
+		○ ENV FILE
+		○ TESTData USING JSON
+	• Git
+	• CICD

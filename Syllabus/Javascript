@@ -1,0 +1,46 @@
+Javascripts basics
+History
+  --- 1995 Brendan Eich
+--3 Session 
+	1.  Setting the Environment
+	2. Installing Node.js
+		1. Visual Studio code installation
+		2. -Extenstion : Prettier
+	
+	3. Declaring variables
+	4. Data Types
+	5. String
+	6. Number and Maths
+	7. Arrays
+		1. What is an Array and how is it declared
+		2. Array Elements using Index
+		3. Push Method
+		4. POP method
+		5. Splice method
+		6. Length
+		7. Sort (Numbers and string)
+		8. Iterating Array
+			i. forEach
+			ii. Map
+			iii. Filter
+	8. Functions
+	9. Assignment Operators
+	10. Objects
+	11. Date Time
+	12. Loops
+	13. Controls Flow
+	14. Scops
+	15. Error Handling
+	16. OOP Concepts -- classes
+		1. Classes
+		2. Abstraction
+		3. Incapsulation
+		4. Inheritance
+		5. Polymorphism
+	17. module -- commonjs, ESModule
+		1. Default Export
+		2. Named export
+	18. Async Await
+		1. Function call backs -- call back hell
+		2. Promises 
+		3. Async Await	
