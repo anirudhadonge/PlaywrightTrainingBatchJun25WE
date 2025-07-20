@@ -73,11 +73,12 @@ class Dog extends Animal{
     }
 }
 
-let a1 = new Animal('Bingo');
-console.log(a1);
-a1.speak();
-a1.speak("this is a message from function");
+// let a1 = new Animal('Bingo');
+// console.log(a1);
+// a1.speak();
+// a1.speak("this is a message from function");
 // let d1 = new Dog("xyz","black");
 // console.log(d1);
 // d1.speak();
 
+module.exports={Animal,Dog}
