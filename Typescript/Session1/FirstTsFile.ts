@@ -22,11 +22,11 @@
 /**
  * let/const <variableName>:<type> 
  */
-// let myName:string ;
+let myName:string ;
 // myName = 'Hitesh'
 // console.log(typeof(myName));
 
-// myName
+ //myName = 6
 // let myNumber:number;
 // myNumber = 6;
 

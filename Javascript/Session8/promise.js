@@ -50,10 +50,24 @@ return new Promise((resolve,reject)=>{setTimeout(()=>{
 //     console.log(message);
 // })
 //async - await go hand in hand.
-async function parentFunction(){
-await fun1()
-await fun2()
-await fun3()
+// async function parentFunction(){
+// await fun1()
+// await fun2()
+// await fun3()
+// }
+
+// parentFunction();
+
+
+function fun1(){
+    console.log("this is fun1");
 }
 
-parentFunction();
+function fun2(fun){
+    console.log("this is fun2");
+    fun();
+}
+
+fun2(()=>{
+    fun1()
+})

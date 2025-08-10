@@ -10,6 +10,7 @@ export default class Vehicle{ // Named Export
 }
 
 
-export function display(message){ // Named Export
+export function display(message,fun1){ // Named Export
     console.log(`Message to be displayed is ${message}`);
+    fun1();
 }

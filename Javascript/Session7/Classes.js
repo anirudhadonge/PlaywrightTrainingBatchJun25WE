@@ -45,7 +45,6 @@
 // function with same name and Parameters in differnt class (class which have some relation inheritance) -- Function overriding.
 
 class Animal{
-
     constructor(name){
         this.name = name;
         this.breed ="abc";

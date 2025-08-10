@@ -1,6 +1,6 @@
 // Interface , Abstract Class , Class
 /**
- * Interface:
+ * Interface:Auto ,  walk
  * Abstract Class:
  * Class:
  * 

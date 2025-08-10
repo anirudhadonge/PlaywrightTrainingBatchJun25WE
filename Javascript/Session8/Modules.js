@@ -33,7 +33,9 @@ import v1 from '../modules/ESModulesExport.js'
 // const {add,subtract,a} = require('../modules/CommonJsExport.js')
 // const {Animal} = require('./../Session7/Classes.js');
 
-display("EsModules");
+display("EsModules",()=>{
+    console.log("Arrow function called")
+});
 
 let car =new v1(4000,1350);
 console.log(car);

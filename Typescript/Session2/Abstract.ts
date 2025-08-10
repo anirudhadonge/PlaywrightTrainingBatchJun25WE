@@ -1,7 +1,18 @@
 /**
  * Circle , Square, Rectangle --- shapes
  */
-
+/**
+ * Feature - Description
+class - Defines the blueprint of an object
+constructor - Initializes object properties
+extends - Inheritance from a base class
+public/private - Access control
+static - Shared across all instances
+readonly - Immutable once set
+abstract - Defines abstract methods in base classes
+get/set - Property accessors
+implements - Interface implementation
+ */
 
 abstract class Shapes{
     name:string
