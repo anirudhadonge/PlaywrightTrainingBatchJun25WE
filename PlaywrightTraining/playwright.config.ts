@@ -34,7 +34,11 @@ export default defineConfig({
     browserName:"chromium",
     headless:false,
     screenshot:"on",
-    video:'on'
+    video:'on',
+    // httpCredentials:{
+    //   username:"admin",
+    //   password:"admin"
+    // }
   },
 
   /* Configure projects for major browsers */

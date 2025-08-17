@@ -1,5 +1,5 @@
-import { test, expect } from "@playwright/test";
-import { downloadFile, uploadFile } from "./../PageModel/ActionsMethods";
+import { test, expect, chromium } from "@playwright/test";
+import { downloadFile, getBrowser, getNewWindowAfterClick, uploadFile } from "./../PageModel/ActionsMethods";
 /**
  * click
  *    button?: "left" | "right" | "middle" | undefined;: Which button do I need to use
@@ -156,11 +156,44 @@ test("JS Prompt popup handling and click Ok ", async ({ page }) => {
   );
 });
 
-test.only("New Page example", async ({ page ,context}) => {
+test("Browser to Page Example",async()=>{
+  const browser = await getBrowser('webkit');
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto("https://the-internet.herokuapp.com/");
+})
+
+test("New Page example", async ({ page ,context}) => {
   await page.goto("https://the-internet.herokuapp.com/");
   await page.locator('[href="/windows"]').click();
-  const newPageEvent = context.waitForEvent('page');
-  await page.locator('[href="/windows/new"]').click();
-  const newPage = await newPageEvent;
-  await expect(newPage.locator('.example h3')).toHaveText('New Window');
+  const newPage = await getNewWindowAfterClick(context, page,'[href="/windows/new"]');
+  await expect(newPage[0].locator('.example h3')).toHaveText('New Window');
+  await expect(page.locator(".example h3")).toHaveText("Opening a new window")
 });
+
+test("Basic Authentication",async({page})=>{
+  await page.goto("https://the-internet.herokuapp.com/");
+  await page.locator('[href="/digest_auth"]').click();
+  await expect(page.locator(".example p")).toContainText("Congratulations! You must have the proper credentials.");
+})
+
+test("Basic Authentication in Test",async({browser})=>{
+  const context = await browser.newContext({httpCredentials:{username:'admin',password:'admin'}});
+  const page = await context.newPage();
+  await page.goto("https://the-internet.herokuapp.com/");
+  await page.locator('[href="/digest_auth"]').click();
+  await expect(page.locator(".example p")).toContainText("Congratulations! You must have the proper credentials.");
+})
+
+// test("drag and drop example",async({page})=>{
+//   await page.goto("https://the-internet.herokuapp.com/");
+//   await page.locator('[href="/drag_and_drop"]').click();
+//   await page.locator("#column-a").dragTo(page.locator("#column-b"));
+// })
+
+test.only("Hovers example",async({page})=>{
+  await page.goto("https://the-internet.herokuapp.com/");
+  await page.locator('[href="/hovers"]').click();
+  await page.locator('[src="/img/avatar-blank.jpg"]').nth(0).hover();
+  
+})
