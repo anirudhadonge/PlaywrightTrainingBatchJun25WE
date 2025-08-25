@@ -1,0 +1,8 @@
+{
+    "dev":{
+        "baseurl":"www.google.dev.com"
+    },
+    "stage":{
+        "baseurl":"www.google.stage.com"
+    }
+}

@@ -35,3 +35,8 @@ export async function getNewWindowAfterClick(context: BrowserContext, page:Page,
     page.locator(locator).click()
 ]);
 }
+
+
+export async function printOut(message:string){
+    console.log(message);
+}

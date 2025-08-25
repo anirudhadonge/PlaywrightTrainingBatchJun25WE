@@ -77,7 +77,7 @@ test("nested frames", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("upload files", async ({ page }) => {
+test("@smoke upload files", async ({ page }) => {
   //button which chooses the file is of input type
   await page.goto("https://the-internet.herokuapp.com/");
   await page.locator('[href="/upload"]').click();
@@ -101,13 +101,13 @@ test("upload files using File Chooser event", async ({ page }) => {
   );
 });
 
-test("Download file example", async ({ page }) => {
+test("@smoke Download file example", async ({ page }) => {
   await page.goto("https://the-internet.herokuapp.com/");
   await page.locator('[href="/download"]').click();
   await downloadFile(page, '[href="download/1.jpg"]');
 });
 
-test("Alert handling ", async ({ page }) => {
+test("@regression Alert handling ", async ({ page }) => {
   await page.goto("https://the-internet.herokuapp.com/");
   await page.locator('[href="/javascript_alerts"]').click();
   page.on("dialog", (dialog) => {
@@ -120,7 +120,7 @@ test("Alert handling ", async ({ page }) => {
   );
 });
 
-test("JS Confirm popup handling and click Ok ", async ({ page }) => {
+test("@smoke JS Confirm popup handling and click Ok ", async ({ page }) => {
   await page.goto("https://the-internet.herokuapp.com/");
   await page.locator('[href="/javascript_alerts"]').click();
   page.on("dialog", async (dialog) => {
@@ -131,7 +131,7 @@ test("JS Confirm popup handling and click Ok ", async ({ page }) => {
   await expect(page.locator("#result")).toHaveText("You clicked: Ok");
 });
 
-test("JS Confirm popup handling and click Cancel ", async ({ page }) => {
+test("@smoke @regression JS Confirm popup handling and click Cancel ", async ({ page }) => {
   await page.goto("https://the-internet.herokuapp.com/");
   await page.locator('[href="/javascript_alerts"]').click();
   page.on("dialog", async (dialog) => {
@@ -142,7 +142,9 @@ test("JS Confirm popup handling and click Cancel ", async ({ page }) => {
   await expect(page.locator("#result")).toHaveText("You clicked: Cancel");
 });
 
-test("JS Prompt popup handling and click Ok ", async ({ page }) => {
+test("JS Prompt popup handling and click Ok ",{
+  tag:"@p1"
+}, async ({ page }) => {
   await page.goto("https://the-internet.herokuapp.com/");
   await page.locator('[href="/javascript_alerts"]').click();
   page.on("dialog", async (dialog) => {
@@ -191,9 +193,35 @@ test("Basic Authentication in Test",async({browser})=>{
 //   await page.locator("#column-a").dragTo(page.locator("#column-b"));
 // })
 
-test.only("Hovers example",async({page})=>{
+test("Hovers example",async({page})=>{
   await page.goto("https://the-internet.herokuapp.com/");
   await page.locator('[href="/hovers"]').click();
   await page.locator('[src="/img/avatar-blank.jpg"]').nth(0).hover();
   
+})
+
+test('Text Content example ',async({page})=>{
+  await page.goto("https://the-internet.herokuapp.com/");
+  await page.waitForLoadState('load');
+  await page.waitForLoadState('networkidle');
+  console.log("wait for few seconds")
+  await page.waitForTimeout(3000)
+  console.log('Waiting completed......')
+  const locator = page.locator('#content h2');
+  await locator.waitFor({state:'visible'}); // waitFor is used on locator level.
+  /**
+   * Attached: Elements is present in DOM
+   * detached: Elements is not in DOM
+   * visible: Element visible on the html page.
+   * hidden: Invisible on the Html page.
+   */
+  /*
+  page level: waitforloadstate()
+  1. domcontentLoaded: DOM is ready
+  2. load : Resources and page element loaded on the page.
+  3. networkidle: 
+  */
+  const text = await locator.textContent()
+  console.log(text);
+  expect(text).toBe('Available Examples');
 })
