@@ -69,7 +69,7 @@ test.describe("this is a group of test", async () => {
     );
   });
 
-  test.only("validation of login with test.step", async ({ page }) => {
+  test("validation of login with test.step", async ({ page }) => {
     await test.step("Click on Login link", async () => {
       await page.goto("/login");
       //await page.locator('[href="/login"]').click();
@@ -86,7 +86,7 @@ test.describe("this is a group of test", async () => {
 
     await test.step("Validate login is successfull", async () => {
       await expect(page.locator(".subheader")).toContainText(
-        "Welcome to the Secure Area.1"
+        "Welcome to the Secure Area."
       );
     });
   });

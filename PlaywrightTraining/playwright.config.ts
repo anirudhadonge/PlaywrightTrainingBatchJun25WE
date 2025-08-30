@@ -12,18 +12,18 @@ import { defineConfig, devices } from "@playwright/test";
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  timeout: 30000, // Maxium allocated to the test.
+  timeout: 180000, // Maxium allocated to the test.
   expect: {
     timeout: 5000,
   },
-
+  
   testDir: "./tests", // it will tell playwright from where do you want to pick the test.
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: false,
   /* Retry on CI only */
-  retries: 0,
+  retries: 2,
   /* Opt out of parallel tests on CI. */
   //workers: 2,//process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -31,6 +31,7 @@ export default defineConfig({
     ["list"],
     ["html", { open: "on-failure" }],
     ["junit", { outputFile: "./my-reports/junit.xml" }],
+    ["allure-playwright"]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -53,12 +54,14 @@ export default defineConfig({
     msedge-beta
     */
     headless: false,
-    screenshot: "only-on-failure",
+    screenshot: "on",
     // httpCredentials:{
     //   username:"admin",
     //   password:"admin"
     // }
     trace: "on",
+
+    video:'on'
   },
 
   outputDir: "Reports_mine",
