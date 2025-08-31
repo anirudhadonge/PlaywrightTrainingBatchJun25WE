@@ -1,0 +1,27 @@
+Playwright command
+ -  npm init playwright
+-npx playwright install (Browser Installation command)
+-npx playwright test (Execute the tests)
+-npx playwright show-report (show html report)
+
+
+
+
+Link :
+Xpath Practice Page | Shadow dom, nested shadow dom, iframe, nested iframe and more complex automation scenarios.
+Allure Report Docs – Install Allure Report for Windows
+ScoopInstaller/Install: 📥 Next-generation Scoop (un)installer
+https://the-internet.herokuapp.com
+
+Fixtures:
+Fixtures | Playwright
+Auto-waiting | Playwright
+
+Code Generation 
+npx playwright test CodeGen
+
+Trace command:
+Npx playwright show-trace <zip file path(trace file path)>
+
+Practice WebSites
+Automation Exercise - Signup / Login
