@@ -12,6 +12,7 @@ import { defineConfig, devices } from "@playwright/test";
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  globalSetup:"./GlobalSetup/GlobalSetup.ts",
   timeout: 180000, // Maxium allocated to the test.
   expect: {
     timeout: 5000,
@@ -23,7 +24,7 @@ export default defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: false,
   /* Retry on CI only */
-  retries: 2,
+  retries: process.env.retries?1:undefined,
   /* Opt out of parallel tests on CI. */
   //workers: 2,//process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */

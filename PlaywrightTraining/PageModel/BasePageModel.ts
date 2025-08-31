@@ -89,4 +89,8 @@ export abstract class BasePageModel implements IBasePage {
   async clickOnLoginlink(){
     await this.click(await this.getLocator(this.loginLink));
   }
+
+  async textContent(locator:Locator){
+    return locator.innerHTML ;
+  }
 }

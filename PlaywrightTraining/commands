@@ -3,9 +3,12 @@ Playwright command
 -npx playwright install (Browser Installation command)
 -npx playwright test (Execute the tests)
 -npx playwright show-report (show html report)
+-npx playwright test --retries=3
+-npx playwright test --workers 4
 
 
-
+Executing the set with different env file
+cross-env NODE_ENV=dev npx playwright test LoginToApplication.spec.ts
 
 Link :
 Xpath Practice Page | Shadow dom, nested shadow dom, iframe, nested iframe and more complex automation scenarios.
