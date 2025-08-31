@@ -69,7 +69,7 @@ test.describe("this is a group of test", async () => {
     );
   });
 
-  test("validation of login with test.step", async ({ page }) => {
+  test("@smoke validation of login with test.step", async ({ page }) => {
     await test.step("Click on Login link", async () => {
       await page.goto("/login");
       //await page.locator('[href="/login"]').click();
